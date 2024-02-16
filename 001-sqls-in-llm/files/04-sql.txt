@@ -1,0 +1,26 @@
+
+In the the below context,  items are  grouped under groups. Using the given context print all items available under the group called Order
+
+Context: 
+
+####
+Order
+--------
+- OrderItem
+- Products
+- Orders
+
+Customer
+------------
+- CustomerMaster
+- CustomerAddress
+- CustomerAccount
+
+Report
+---------
+- ReportA
+- ReportB
+- ReportC
+
+######
+

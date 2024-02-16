@@ -1,0 +1,35 @@
+For the given context, generate the detailed join SQL query for the given question.  Shortcodes for the table and columns are given under ShortCodes section.
+Question: Get the Work order id and labour cost of workorder with the status completed
+
+Shortcodes: 
+####
+
+[TABLE] Shortcodes:
+- ABCDTABLE: OrderItem
+- PPPP: Products
+
+[COLUMN] Shortcodes:
+- WONUM: WorkOrderId
+- ACTLABCOST: Labour Cost
+####
+
+Context: 
+####
+
+CREATE TABLE ”ZZZZZZ  "."WORKORDER"  (
+		  "WONUM" VARGRAPHIC(25 CODEUNITS16) NOT NULL , 
+		  "STATUS" VARGRAPHIC(16 CODEUNITS16) NOT NULL , 
+		  "ACTMATCOST" DECIMAL(10,2) NOT NULL , 
+		  "ACTLABCOST" DECIMAL(10,2) NOT NULL , 
+		  "ACTTOOLCOST" DECIMAL(10,2) NOT NULL , 
+		  "HASCHILDREN" INTEGER NOT NULL , 
+
+		  "ANYWHEREREFID" BIGINT , 
+		  "SPLANREVIEWDATE" TIMESTAMP , 
+		  "UNITSOFWORK" VARGRAPHIC(16 CODEUNITS16) , 
+		  "DJPAPPLIED" VARGRAPHIC(5 CODEUNITS16) NOT NULL , 
+		  "DJPERROR" VARGRAPHIC(400 CODEUNITS16) , 
+		  "MILESTONE" INTEGER NOT NULL )   
+		 IN "MAXDATA" INDEX IN "MAXINDEX"  
+		 ORGANIZE BY ROW; 
+####

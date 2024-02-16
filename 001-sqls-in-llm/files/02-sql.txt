@@ -1,0 +1,43 @@
+For the given context, generate the detailed join SQL query for the given question. Shortcodes for the table and columns are given under ShortCodes section.
+Question: What is the total price of the product called Laptop sold yesterday. 
+
+Shortcodes: 
+####
+
+[TABLE] Shortcodes:
+- ABCDTABLE: OrderItem
+- PPPP: Products
+
+[COLUMN] Shortcodes:
+- PNAME: ProductName
+- PR: Price
+- dddddd: OrderDate
+####
+
+Context: 
+####
+CREATE TABLE PPPP (
+    ProductID INT PRIMARY KEY AUTO_INCREMENT,
+    PNAME VARCHAR(255) NOT NULL,
+    UnitPrice DECIMAL(10, 2) NOT NULL,
+    Description TEXT,
+    Category VARCHAR(50)
+);
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY AUTO_INCREMENT,
+    CustomerID INT NOT NULL,
+    dddddd DATE NOT NULL,
+    TotalAmount DECIMAL(10, 2) NOT NULL,
+    Status ENUM('Pending', 'Processing', 'Shipped', 'Delivered') NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+CREATE TABLE ABCDTABLE (
+    OrderItemID INT PRIMARY KEY AUTO_INCREMENT,
+    OrderID INT NOT NULL,
+    ProductID INT NOT NULL,
+    Quantity INT NOT NULL,
+    PR DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+####
