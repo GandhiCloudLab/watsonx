@@ -8,7 +8,7 @@
         <th>Link</th>
     </thead>
     <tr>
-        <td>3</td>
+        <td>1</td>
         <td>SQL</td>
         <td>Sqls in LLM</td>
         <td><a href="./001-sqls-in-llm">Link</a></td>
